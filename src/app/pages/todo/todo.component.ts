@@ -43,4 +43,11 @@ export class TodoComponent implements OnInit {
     this.isSlidePanelOpen = false;
   }
 
+  onSubmit() {
+    if (this.todoForm.valid) {
+
+    } else {
+      this.todoForm.markAllAsTouched();
+    }
+  }
 }
