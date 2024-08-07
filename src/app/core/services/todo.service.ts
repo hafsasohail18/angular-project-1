@@ -8,9 +8,16 @@ export class TodoService {
   todos: ITodo[] = [
     {
       id: 1, 
-      title: 'Test Title', 
-      description: 'description random', 
+      title: 'Todo Title', 
+      description: 'Todo description', 
       status: 'OPEN',
+
+    }, 
+    {
+      id: 2, 
+      title: 'Todo Title2', 
+      description: 'Todo description', 
+      status: 'DONE',
 
     }
   ]
