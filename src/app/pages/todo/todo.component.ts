@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoCardComponent } from '../../shared/components/todo-card/todo-card.component';
+import { TodoCardComponent, ITodoStatus } from '../../shared/components/todo-card/todo-card.component';
 import { ITodo } from '../../core/model/todo.models';
 import { TodoService } from '../../core/services/todo.service';
 import { SlidePanelComponent } from '../../shared/ui/slide-panel/slide-panel.component';
@@ -16,6 +16,8 @@ export class TodoComponent implements OnInit {
   todoForm!: FormGroup;
   todos: ITodo[] = [];
   isSlidePanelOpen = false;
+  todoStatus = ITodoStatus;
+
   
   constructor(private todoService: TodoService, private fb: FormBuilder) {
     this.todoForm = this.fb.group({
