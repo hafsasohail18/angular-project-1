@@ -18,7 +18,12 @@ export class TodoService {
       title: 'Todo Title2', 
       description: 'Todo description', 
       status: 'DONE',
-
+    }, 
+    {
+      id: 3, 
+      title: 'Todo Title3', 
+      description: 'Todo description', 
+      status: 'PROGRESS',
     }
   ]
 

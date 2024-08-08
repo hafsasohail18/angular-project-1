@@ -45,9 +45,21 @@ export class TodoComponent implements OnInit {
 
   onSubmit() {
     if (this.todoForm.valid) {
+      const newTodo = this.todoForm.value;
+      this.todos.push(newTodo);
+      this.onCloseSlidePanel();
+      this.todoForm.reset();
 
     } else {
       this.todoForm.markAllAsTouched();
     }
   }
+
+  handleTodoDelete(deletedTodo: ITodo) {
+    this.todos = this.todos.filter(todo => todo.id !== deletedTodo.id);
+  }
+
+  
+
+  
 }

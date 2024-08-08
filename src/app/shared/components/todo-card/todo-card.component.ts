@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITodo } from '../../../core/model/todo.models';
+import { TodoService } from '../../../core/services/todo.service';
 
 export type ITodoType = 'OPEN' | 'PROGRESS' | 'TESTING' | 'DONE' ; 
 export const ITodoStatus = ['OPEN', 'PROGRESS', 'TESTING', 'DONE'];
@@ -12,6 +13,15 @@ export const ITodoStatus = ['OPEN', 'PROGRESS', 'TESTING', 'DONE'];
   styleUrl: './todo-card.component.css'
 })
 export class TodoCardComponent {
+
   @Input() type: ITodoType = 'OPEN';
-  @Input() todo!: ITodo
+  @Input() todo!: ITodo; 
+  @Output() todoDeleted = new EventEmitter<ITodo>();
+
+  onClickDelete(todo: ITodo) {
+
+    console.log("clicked...", todo)
+    this.todoDeleted.emit(this.todo);
+  }
+
 }
