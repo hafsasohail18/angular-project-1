@@ -8,11 +8,11 @@ export const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
-    children: [{ path: '', component: LoginComponent }],
+    children:[{path: '', component: TodoComponent}],
   },
   {
     path: '',
-    component: MasterComponent, 
-    children:[{path: 'todo', component: TodoComponent}], 
+    component: MasterComponent,  
+    children: [{ path: 'login', component: LoginComponent }],
   }
 ];
